@@ -1,0 +1,13 @@
+{
+  "name": "typechain2",
+  "version": "1.0.0",
+  "description": "Learning Typescript by makeing a Blockchain with it",
+  "main": "index.js",
+  "repository": "https://github.com/hanjy-slowturtle/typechain2.git",
+  "author": "hanjy-slowturtle <h920915@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prestart": "tsc",
+    "start": "node index.js"
+  }
+}
