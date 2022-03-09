@@ -1,28 +1,20 @@
-interface Person {
-  name: string;
-  age: number;
-  gender: string;
+class Person {
+  public name: string;
+  public age: number;
+  public gender: string;
+  constructor(name: string, age: number, gender?: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender ? gender : "";
+  }
 }
 
-const name = "Hanjy",
-  age = 31,
-  gender = "male";
-
-const person: Person = {
-  name: "Hanjy",
-  age: 31,
-  gender: "male",
-};
-
-const sayHi = (name: string, age: number, gender: string): void => {
-  console.log(`Hello ${name}, you are ${age}, you are a ${gender}`);
-};
+const jy = new Person("hanjy", 31);
 
 const sayHi2 = ({ name, age, gender }: Person) => {
   console.log(`${name} ${age} ${gender}`);
 };
 
-sayHi(name, age, gender);
-sayHi2(person);
+sayHi2(jy);
 
 export {};
