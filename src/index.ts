@@ -1,20 +1,29 @@
-class Person {
-  public name: string;
-  public age: number;
-  public gender: string;
-  constructor(name: string, age: number, gender?: string) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender ? gender : "";
+class Block {
+  public index: number;
+  public hash: string;
+  public prevHash: string;
+  public data: string;
+  public timestamp: number;
+
+  constructor(
+    index: number,
+    hash: string,
+    prevHash: string,
+    data: string,
+    timestamp: number
+  ) {
+    this.index = index;
+    this.hash = hash;
+    this.prevHash = prevHash;
+    this.data = data;
+    this.timestamp = timestamp;
   }
 }
 
-const jy = new Person("hanjy", 31);
+const genesisBlock: Block = new Block(0, "helloblock", "", "Hello", 123456);
 
-const sayHi2 = ({ name, age, gender }: Person) => {
-  console.log(`${name} ${age} ${gender}`);
-};
+let blockChain: [Block] = [genesisBlock];
 
-sayHi2(jy);
+console.log(blockChain);
 
 export {};
